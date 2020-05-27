@@ -40,7 +40,7 @@ const getMenus = (admin:boolean) => {
       title: 'project', route: '/project', hide: !isZhCN()
     },
     {
-      title: 'data', route: '/dataSearch', hide:!admin
+      title: 'data', route: '/dataSearch'
     }
   ];
   return MENUS.filter(item => !item.hide)

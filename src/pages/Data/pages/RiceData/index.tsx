@@ -48,7 +48,6 @@ export const RiceData = () => {
         const { validateFields, getFieldsValue } = form;
         validateFields().then(() => {
             const value = getFieldsValue();
-            console.log(value)
             getRiceData(value).then((res) => {
                 setRiceData(res);
                 console.log(res);

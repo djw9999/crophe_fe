@@ -33,23 +33,54 @@ export const Menus = (props: IProps) => {
           name: 'Lizhong Xiong & Wanneng Yang',
           path: routes.riceRlxWy.path
         },{
-          name: 'Data',
+          name: 'Rice Data',
           path: routes.riceData.path
+        }
+      ]
+    },{
+      name: "Maize",
+      subMenu: [
+        {
+          name: 'Mingqiu Dai & Wanneng Yang',
+          path: routes.maizeMqd.path
+        },{
+          name: 'Maize_Jianbing Yan & Wanneng Yang',
+          path: routes.maizeJby.path
+        },{
+          name: 'Maize Data',
+          path: routes.maizeData.path
+        }
+      ]
+    },{
+      name: "Rape",
+      subMenu: [
+        {
+          name: 'Rape img',
+          path: routes.rapeImg.path
+        }
+      ]
+    },{
+      name: "Cotton",
+      subMenu: [
+        {
+          name: 'Cotton img',
+          path: routes.cottonImg.path
         }
       ]
     }
   ];
 
-  const getDefaultSelectedName = (menus:IMenuItem[]) => {
+  let name = DEFAULT_ACTIVE_ITEM.name;
+  const getDefaultSelectedName = (menus:any) => {
     const { pathname } = window.location;
-    return menus.reduce((name, item, index) => {
-      if(item.subMenu) {
-        name = getDefaultSelectedName(item.subMenu);
-      } else if(item.path === pathname) {
-        name = item.name;
-      };
-      return name
-    }, DEFAULT_ACTIVE_ITEM.name)
+    for(let i = 0; i <menus.length; i++) {
+      if(menus[i].subMenu) {
+        name = getDefaultSelectedName(menus[i].subMenu);
+      } else if(menus[i].path === pathname) {
+        name = menus[i].name;
+      }
+    }
+    return name;
   }
 
   const defaultOpenKeys = menus.map((item:any) => item.name);

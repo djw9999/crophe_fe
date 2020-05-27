@@ -22,6 +22,7 @@ export const Login = () => {
                 type: ACTION_TYPE.UPDATE_USER_STATE,
                 data: false
             });
+            window.location.reload();
             setLogin(false)
         })
     }
@@ -52,6 +53,7 @@ export const Login = () => {
             loginAccount(value).then((res) => {
                 hanleLoginAfter(res);
                 setModalVisable(false);
+                window.location.reload();
             }).catch((err) => console.error(err))
         });
     }
