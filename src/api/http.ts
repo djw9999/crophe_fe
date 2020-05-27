@@ -2,7 +2,7 @@ import axios from 'axios';
 import { message } from 'antd';
 
 interface IRequestOptions {
-  method: 'get' | 'post',
+  method: 'get' | 'post' | 'put',
   data?: any
 }
 
@@ -21,7 +21,7 @@ export function request(url: string, opts:IRequestOptions) {
       url,
       method: opts.method || 'get',
       params: opts.method === 'get' || opts.method == null ? data : {},
-      data: opts.method === 'post' ? data : {},
+      data: opts.method === 'post' || 'put' ? data : {},
       ...extra
   }).then(res => {
     let result;

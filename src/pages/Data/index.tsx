@@ -24,6 +24,7 @@ export const Data = (props:IProps) => {
                 <Route path={routes.maizeData.path} component={routes.maizeData.component}></Route>
                 <Route path={routes.rapeImg.path} component={routes.rapeImg.component}></Route>
                 <Route path={routes.cottonImg.path} component={routes.cottonImg.component}></Route>
+                <Route path={routes.authorization.path} component={routes.authorization.component}></Route>
                 <Route exact path={'/dataSearch'} component={routes.riceQzWy.component}></Route>
             </Layout>
         </Switch>
