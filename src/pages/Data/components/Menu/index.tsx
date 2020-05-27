@@ -29,6 +29,12 @@ export const Menus = (props: IProps) => {
         {
           name: DEFAULT_ACTIVE_ITEM.name,
           path: DEFAULT_ACTIVE_ITEM.path
+        },{
+          name: 'Lizhong Xiong & Wanneng Yang',
+          path: routes.riceRlxWy.path
+        },{
+          name: 'Data',
+          path: routes.riceData.path
         }
       ]
     }

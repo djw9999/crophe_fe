@@ -17,7 +17,9 @@ export const Data = (props:IProps) => {
         <Switch>
             <Layout>
                 <Route path={routes.riceQzWy.path} component={routes.riceQzWy.component}></Route>
-                <Route exact path={`/data`} component={routes.riceQzWy.component}></Route>
+                <Route path={routes.riceRlxWy.path} component={routes.riceRlxWy.component}></Route>
+                <Route path={routes.riceData.path} component={routes.riceData.component}></Route>
+                <Route exact path={'/dataSearch'} component={routes.riceQzWy.component}></Route>
             </Layout>
         </Switch>
     </div>

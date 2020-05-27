@@ -53,7 +53,7 @@ export const Login = () => {
                 hanleLoginAfter(res);
                 setModalVisable(false);
             }).catch((err) => console.error(err))
-        })
+        });
     }
 
     if(!login) {

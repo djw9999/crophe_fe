@@ -37,7 +37,7 @@ const getRoutes = (admin:boolean) => {
     { path: '/teamDetail', component: isZhCN() ? TeamDetail : TeamDetailEn },
     { path: '/instrument', component: isZhCN() ? Instrument : InstrumentEn },
     { path: '/instrumentDetail', component: isZhCN() ? InstrumentDetail : InstrumentDetailEn },
-    { path: '/data', component: Data, hide:!admin },
+    { path: '/dataSearch', component: Data, hide:!admin },
     { key: 'default', component: News } // 兜底页面
   ];
   return routes.filter((item:any) => !item.hide);

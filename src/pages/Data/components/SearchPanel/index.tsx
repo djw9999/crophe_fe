@@ -16,8 +16,8 @@ export const SearchPanel = (props: Iprops) => {
                 {formContent}
             </div>
             <div className={$style['buttonWrapper']}>
-                {searchData && <Button type='primary' className={$style['dataButton']}>Search Data</Button>}
-                {searchImg && <Button type='primary' className={$style['imgButton']}>Search Img</Button>}
+                {searchData && <Button type='primary' onClick={searchData} className={$style['dataButton']}>Search Data</Button>}
+                {searchImg && <Button type='primary' onClick={searchImg} className={$style['imgButton']}>Search Img</Button>}
             </div>
         </div>
     )
