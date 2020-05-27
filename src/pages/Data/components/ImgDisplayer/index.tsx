@@ -39,7 +39,7 @@ export const ImgDisplayer = (props:IProps) => {
                 onCancel={() => setModalShow(false)}
                 footer={null} 
             >
-               <img className={'bigImg'} style={rotate && {transform: rotate}}  src={`/${currentPath}`}></img> 
+               <img className={$style['bigImg']} style={rotate && {transform: rotate}}  src={`/${currentPath}`}></img> 
             </Modal>
        </>
     )
