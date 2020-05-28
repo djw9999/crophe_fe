@@ -52,13 +52,29 @@ export const Authorization = () => {
             })
         }
     }
+
+    const  handleSelect = (value:any) => {
+        getAuthorizationList(form.getFieldsValue()).then((res) => {
+            const { allList, ownList } = res;
+            setAllList(allList.reduce((arr:any, item:any) => {
+                const { s_year } = item;
+                arr.push({key: s_year, title: s_year});
+                return arr;
+            }, []));
+            setOwnList(ownList.reduce((arr:any, item:any) => {
+                const { s_year } = item;
+                arr.push(s_year);
+                return arr;
+            }, []))
+        })
+    }
     
     return (
         <div className={$style['authWrapper']}>
             <div className={$style['formWrapper']}>
                 <Form form={form} layout='inline'>
-                    <Form.Item name="s_type" label='作物种类：' initialValue={'rice'}>
-                        <Select style={{width: 200}}  placeholder='选择作物种类' onChange={(value) => {}}>
+                    <Form.Item name="s_tp" label='作物种类：' initialValue={'rice'}>
+                        <Select style={{width: 200}}  placeholder='选择作物种类' onChange={(value) => {handleSelect(value)}}>
                             <Option key={'rice'} value={'rice'}>{'水稻'}</Option>
                             <Option key={'maize'} value={'maize'}>{'玉米'}</Option>
                             <Option key={'rape'} value={'rape'}>{'油菜'}</Option>
