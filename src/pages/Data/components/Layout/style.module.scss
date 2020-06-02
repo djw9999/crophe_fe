@@ -18,5 +18,5 @@ $menuWidth: 200px;
 }
 
 .mainContainer{
-  width: calc(100vw - #{$menuWidth});
+  flex:1;
 }
