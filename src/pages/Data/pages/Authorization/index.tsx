@@ -82,7 +82,7 @@ export const Authorization = () => {
                         </Select>
                     </Form.Item>
                     <Form.Item name="s_img_data" label='数据类型:' initialValue={'img'}>
-                        <Select style={{width: 200}}  placeholder='数据类型'>
+                        <Select style={{width: 200}}  placeholder='数据类型' onChange={(value) => {handleSelect(value)}}>
                             <Option key={'img'} value={'img'}>{'图片'}</Option>
                             <Option key={'data'} value={'data'}>{'数据'}</Option>
                         </Select>
